@@ -46,7 +46,7 @@ class Program
         
         
         var sortedAutos = automobiles.OrderBy(auto => auto.Cost).ToList();
-        var mostExpensiveCar = sortedAutos[0];
+        var mostExpensiveCar = sortedAutos[^1];
         Console.WriteLine(mostExpensiveCar.IsInspected);
 
 
@@ -59,21 +59,32 @@ class Program
         Console.WriteLine(bcd.Cost);
         
         automobiles[0].ShowInfo();
-
+        
         var sortedPlanes = planes.OrderBy(plane => plane.Cost).ToList();
-        var mostExpensivePlane = sortedPlanes[0];
+        var mostExpensivePlane = sortedPlanes[^1];
         Console.WriteLine(mostExpensivePlane.Power);
         Console.WriteLine(mostExpensivePlane.Cost);
         Console.WriteLine(mostExpensivePlane.Brand);
-
+        
         foreach (var automobile in automobiles)
         {
             automobile.ShowInfo();
         }
-
+        
         foreach (var plane in planes)
         {
             plane.ShowInfo();
         }
+        
+        Console.Write("Введите номер самолета в списке: ");
+        int boolshit = Convert.ToInt32(Console.ReadLine());
+        while (boolshit > planes.Count - 1)
+        {
+            Console.WriteLine($"Количество самолетов в списке: {planes.Count}. \nВведите номер самолета в списке: ");
+            boolshit = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine($"Мощность: {planes[boolshit - 1].Power}");
+        Console.WriteLine($"Высота полета: {planes[boolshit - 1].MaxAltitude}");
+        
     }
 }

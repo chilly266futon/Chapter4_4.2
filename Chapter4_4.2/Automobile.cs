@@ -30,12 +30,18 @@ public class Automobile : Transport
         }
     }
 
-    public bool IsInspected
+    public string IsInspected
     {
-        get { return isInspected; }
-        set
+        get
         {
-            isInspected = value;
+            if (isInspected == true)
+            {
+                return "ТО пройден";
+            }
+            else
+            {
+                return "ТО не пройден";
+            }
         }
     }
 

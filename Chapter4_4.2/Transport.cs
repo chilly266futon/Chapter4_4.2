@@ -57,7 +57,6 @@ public abstract class Transport
         get { return number; }
         set
         {
-            
             string temp = value.Trim();
             temp.ToUpper();
             string[] subs = temp.Split(' ');
@@ -98,15 +97,18 @@ public abstract class Transport
         Console.Write(power);
         Console.ResetColor();
         Console.WriteLine(" л.с.");
+        
         Console.Write($"Стоимость: ");
         Console.ForegroundColor = ConsoleColor.Red;
         Console.Write(cost);
         Console.ResetColor();
         Console.WriteLine(" руб.");
+        
         Console.Write($"Мощность: ");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine(number);
         Console.ResetColor();
+        
         Console.Write($"Марка: ");
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine(brand);
